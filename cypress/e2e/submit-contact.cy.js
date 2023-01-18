@@ -2,12 +2,13 @@ import { HOME } from "../fixtures/navigation"
 import { CONTACT_PAGE } from "../pageObjects/contact"
 import { NAVIGATION_BAR } from "../pageObjects/navigation"
 import { CONTACT_1 } from "../data/contacts"
+import { CONTACT_ERROR } from "../fixtures/errorMsg"
 
 const home = HOME
 const contactPage = CONTACT_PAGE
-
 const navigationBar = NAVIGATION_BAR
 const contact1 = CONTACT_1
+const contactError = CONTACT_ERROR
 
 const message = 'This is a looooooooong text in message.'
 
@@ -24,10 +25,10 @@ describe("Visit contact page", () => {
     cy.get(contactPage.SUBMIT_BTN).click()
 
     //3. Verify error messages
-    cy.get(contactPage.ALERT_MSG).should('be.visible').contains('but we won\'t get it unless you complete the form correctly.')
-    cy.get(contactPage.FORENAME_ERROR_MSG).should('be.visible').should('have.text','Forename is required')
-    cy.get(contactPage.EMAIL_ERROR_MSG).should('be.visible').should('have.text','Email is required')
-    cy.get(contactPage.MESSAGE_ERROR_MSG).should('be.visible').should('have.text','Message is required')
+    cy.get(contactPage.ALERT_MSG).should('be.visible').should('contain', contactError.ALERT_MSG)
+    cy.get(contactPage.FORENAME_ERROR_MSG).should('be.visible').should('have.text', contactError.NO_FORENAME_MSG)
+    cy.get(contactPage.EMAIL_ERROR_MSG).should('be.visible').should('have.text', contactError.NO_EMAIL_MSG)
+    cy.get(contactPage.MESSAGE_ERROR_MSG).should('be.visible').should('have.text', contactError.NO_MESSAGE_MSG)
 
     //4. Populate mandatory fields
     cy.get(contactPage.FORENAME_TXT).type(contact1.name)
