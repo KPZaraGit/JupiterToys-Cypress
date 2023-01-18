@@ -168,6 +168,7 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
+    "installCypress": "npm cypress install",
     "test": "npx cypress run"
   },
   "repository": {
