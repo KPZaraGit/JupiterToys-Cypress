@@ -169,7 +169,7 @@
   },
   "scripts": {
     "cypress:install": "cypress install",
-    "test": "npx cypress run"
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
