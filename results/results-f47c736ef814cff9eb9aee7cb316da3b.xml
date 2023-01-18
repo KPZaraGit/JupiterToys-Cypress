@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="11.524" tests="2" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-01-18T09:51:09" tests="0" file="cypress\e2e\submit-contact.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Visit contact page" timestamp="2023-01-18T09:51:09" tests="2" time="11.510" failures="0">
+    <testcase name="Visit contact page Test Case 1 - error message test" time="4.414" classname="Test Case 1 - error message test">
+    </testcase>
+    <testcase name="Visit contact page Test Case 2 - successful submission message test" time="5.066" classname="Test Case 2 - successful submission message test">
+    </testcase>
+  </testsuite>
+</testsuites>

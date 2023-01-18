@@ -10,5 +10,20 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-  },
+    reporter: "cypress-multi-reporters",
+    reporterOptions: {
+      reporterEnabled: "cypress-mochawesome-reporter, mocha-junit-reporter",
+      cypressMochawesomeReporterReporterOptions:{
+        reportDir: "cypress/reports",
+        charts: true,
+        reportPageTitle: "My Test Suite",
+        embeddedScreenshots: true,
+        inlineAssets: true
+      },
+      mochaJunitReporterReporterOptions: {
+        mochaFile: "cypress/reports/junit/results-[hash].xml"
+      }
+    },
+    video: false
+  }
 });
