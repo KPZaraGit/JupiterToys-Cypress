@@ -12,7 +12,7 @@ module.exports = defineConfig({
     },
     reporter: "cypress-multi-reporters",
     reporterOptions: {
-      reporterEnabled: "cypress-mochawesome-reporter, mocha-junit-reporter",
+      reporterEnabled: "mocha-junit-reporter",
       cypressMochawesomeReporterReporterOptions:{
         reportDir: "cypress/reports",
         charts: true,
