@@ -1,8 +1,11 @@
-import {CONTACT_PAGE} from "../pageObjects/contact"
+import { HOME } from "../fixtures/navigation"
+import { CONTACT_PAGE } from "../pageObjects/contact"
 import { NAVIGATION_BAR } from "../pageObjects/navigation"
-import {CONTACT_1} from "../data/contacts"
+import { CONTACT_1 } from "../data/contacts"
 
+const home = HOME
 const contactPage = CONTACT_PAGE
+
 const navigationBar = NAVIGATION_BAR
 const contact1 = CONTACT_1
 
@@ -11,7 +14,7 @@ const message = 'This is a looooooooong text in message.'
 describe("Visit contact page", () => {
   beforeEach(function () {
     //1. From the home page go to contact page
-    cy.visit("/")
+    cy.visit(home)
     cy.get(navigationBar.CONTACT_NAV).click()
   })
 
@@ -53,6 +56,6 @@ describe("Visit contact page", () => {
     
     //4. Validate successful submission message
     cy.get(contactPage.SUCCESS_SUBMISSION_MSG).should('be.visible')
-                                              .should('contain','Thanks Kevin Tester, we appreciate your feedback.')
+                                              .should('contain',`Thanks ${contact1.name}, we appreciate your feedback.`)
   })  
 })

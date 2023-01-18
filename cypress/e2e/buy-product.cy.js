@@ -1,8 +1,10 @@
+import { SHOP } from "../fixtures/navigation"
 import { NAVIGATION_BAR } from "../pageObjects/navigation"
 import { SHOP_PAGE } from "../pageObjects/shop"
 import { CART_PAGE } from "../pageObjects/cart"
 import {STUFFED_FROG, FLUFFY_BUNNY, VALENTINE_BEAR} from "../data/products"
 
+const shop = SHOP
 const navigationBar = NAVIGATION_BAR
 const shopPage = SHOP_PAGE
 const cartPage = CART_PAGE
@@ -32,7 +34,7 @@ function verifyPrice (product, unitPrice, quantity) {
 
 describe("Visit shop page", () => {
   beforeEach(function () {
-    cy.visit("/#/shop")
+    cy.visit(shop)
   })
 
     it("Test Case 3 - add to card then verify price", () => {
