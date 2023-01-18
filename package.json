@@ -168,7 +168,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "test cypress automation"
+    "test": "npx cypress run"
   },
   "repository": {
     "type": "git",
