@@ -173,7 +173,8 @@
   },
   "scripts": {
     "cypress:install": "cypress install",
-    "test": "cypress run"
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome --headless"
   },
   "repository": {
     "type": "git",
